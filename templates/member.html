@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Welcome back</h1>
+    {{ request.user }}
+    <h3>{{ title | upper }}</h3>
+    <p>
+        {{ my_list }}
+    </p>
+
+    <ul>
+    {% for a in my_list %}
+        {% if a == 123 %}
+            <li>{{ forloop.counter }} - {{ a|add:22 }}</li>
+        {% else  %}
+            <li>{{ forloop.counter }} - {{ a }}</li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+{% endblock %}

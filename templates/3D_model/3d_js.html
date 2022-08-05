@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href='style.css' charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0">
+
+    <!--<link rel="icon" href="https://discoverthreejs.com/favicon.ico" type="image/x-icon"> 網站的小圖-->
+    <title>Holographic Display</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <!-- <div id="scene-container">  </div> -->
+
+    <div>
+        <div style="margin: 0; padding: 0; text-align: center">
+            <button class="home"> <a href='../'> 回到首頁 </a></button> <!--type="submit"-->
+            <div>
+                <h1 id="info">3D Model Display Testing</h1>
+                <h1 id="info2">3D Model Display Testing</h1>
+            </div>
+        </div>
+
+        <div style="margin: 0; padding: 0; position: absolute; text-align: left;">
+            <div style="margin:20px 20px 10px 10px; padding: 10px 10px 10px 10px; border: 2px solid white;">
+                <center>
+                    <h1 style="color:white; margin:10px 0px 15px 0px;">模型客製化</h1>
+                    <button id="man_l" class="model_buttom">粗獷左手</button>
+                    <button id="man_r" class="model_buttom">粗獷右手</button><br/>
+                    <button id="female_l" class="model_buttom">纖細左手</button>
+                    <button id="female_r" class="model_buttom">纖細右手</button>
+                </center>
+            </div>
+            <!--
+            <form action='.' method='POST'>{% csrf_token %}
+                <h1>模型客製化</h1>
+
+                手形：<input type="radio" id="gender" name="gender" value="man">粗獷
+                <input type="radio" id="gender" name="gender" value="woman">纖細<br>
+                左右：<input type="radio" id="hand" name="hand" value="man">左手
+                <input type="radio" id="hand" name="hand" value="woman">右手<br>
+
+                膚色：<span class="colorPicker"><input id="body-color" type="color" value="#ffbb00"></input></span><br/>
+                <input type="reset" class="model_buttom" value="清除">
+                <button type="submit" class="yes"> <a href='../'> 確認 </a></button><br/>
+            </form>
+            -->
+        </div>
+        <canvas></canvas>
+    </div>
+    <script type="module" src="main.js"></script> <!--用main.js-->
+</body>
+</html>
