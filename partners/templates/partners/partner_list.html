@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% if request.user.is_authenticated %}
+    {% else %}
+        <p>您尚未登入-<a href="/partners/login/">登入</a></p>
+    {% endif %}
+    <!--列出所有物件-->
+    <!-- {{ object_list }} -->
+    <!--for loop 列出所有物件編號與標題-->
+    <h1>夥伴清單</h1>
+    <button type="submit"> <a href='/partners/create/'>新增夥伴</a></button>
+    <button type="submit"> <a href='../'>返回夥伴頁面</a></button>
+    <ol>
+        {% for instance in object_list %}
+
+            <li>Partner No.{{ instance.id }} - <a href='{{ instance.get_absolute_url }}'> {{ instance.company_name }} </a> </li>
+
+        {% endfor %} <!--for loop 結束-->
+    </ol>
+{% endblock %}
