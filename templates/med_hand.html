@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+{#    <button onclick="location.href='{% url 'get_your_hand' %}'">Execute Script</button> <hr>#}
+{#    {% if hand_size %}#}
+{#        {{hand_size | safe}}#}
+{#    {% endif %}#}
+<html>
+    <head>
+        <script>
+            function call_counter(url) {
+                window.open(url);
+            }
+        </script>
+        </head>
+        <body>
+            <button onclick="call_counter('http://127.0.0.1:8000/GetHand/getting');">偵測手部比例</button>
+
+            <button onclick="call_counter('http://127.0.0.1:8000/GetHand_output/video_stream');">
+                Video Streaming Only
+            </button>
+        </body>
+</html>
+{% endblock %}
