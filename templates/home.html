@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+    <input id="popuptest" type="button" value="按我">
+
+{#    <dialog open id="infoModal">#}
+{#        <p>是否使用手勢操作</p>#}
+{#        <button id="close">是</button>#}
+{#        <button id="close">否</button>#}
+{#    </dialog>#}
+
+    <h1>廠商端首頁</h1>
+    <p>誠摯歡迎您使用本網站 敬祝使用愉快</p>
+
+    <script type="application/javascript">
+        {#let infoModal=document.getElementById('infoModal');#}
+        {#let close=document.getElementById('close');#}
+        {#close.addEventListener('click', function(){ infoModal.close();})#}
+
+        let button = document.getElementById('popuptest');
+        function popup2(e) {
+            window.confirm('是否使用手勢操作');
+        }
+        button.addEventListener('click', popup2);
+    </script>
+{% endblock %}

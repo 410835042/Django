@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="icon" href="{% static 'Texture/logo1_0.png' %}" type="image/x-icon"> <!--網站的小圖-->
+    <title>Holographic Display</title>
+    <script type="module" src="{% static "main.js" %}"></script>
+</head>
+<body>
+    <div style="margin: 0; padding: 0;">
+        <div>
+            <marquee><p>本系統是由國立東華大學 資訊管理學系 第23屆 畢業專題第三組開發</p></marquee>
+            {% include 'navbar.html' %}
+        </div>
+{#      <div>#}
+{#          <h1 class="info">3D Model Display Testing</h1>#}
+{#          <h1 class="info2">3D Model Display Testing</h1>#}
+{#      </div>#}
+        <div style="margin: 0; padding: 0; position: absolute; text-align: left;">
+            <div style="margin:20px 20px 10px 10px;">
+                <button class="home"> <a href='../'>回到首頁</a></button>
+{#                <button class="home" id="GetHand" onclick="ranint()">抓取手部比例</button>#}
+                <button class="home" ><a href='../GetHand/'>抓取手部比例</a></button>
+                <button class="home" id="GetHand">抓取手部比例</button>
+            </div>
+
+            <div style="margin:20px 20px 10px 10px; padding: 10px; border: 2px solid white;">
+                <center>
+{#                    <h1 style="color:white; margin:10px 0px 15px 0px;">模型客製化</h1>#}
+{#                    <button id="background" class="home">背景切換</button><br/><br/>#}
+                    <div style="margin: 20px 10px 20px 10px; display: inline-flex">
+                        <div><p style="margin:0 5px 0 0; color: white;">背景</p></div>
+                        <div>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round" id="back"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 style="color:white; margin:10px 0px 5px 0px;">- 手部模型 -</h3>
+                        <button id="man_l" class="model_button">粗獷左手</button>
+                        <button id="man_r" class="model_button">粗獷右手</button><br/>
+                        <button id="female_l" class="model_button">纖細左手</button>
+                        <button id="female_r" class="model_button">纖細右手</button>
+                    </div>
+                    <div style="margin: 40px 0 0 0;">
+                        <h3 style="color:white; margin:10px 0px 5px 0px;">- 戒指顏色 -</h3>
+                        <button id="gold" class="model_button">金</button>
+                        <button id="silver" class="model_button">銀</button>
+                        <button id="rose_gold" class="model_button">玫瑰金</button>
+                    </div>
+                </center>
+            </div>
+        </div>
+        <canvas></canvas>
+
+    </div>
+{#    <script type="module" src="main.js"></script> <!--用main.js-->#}
+</body>
+</html>
