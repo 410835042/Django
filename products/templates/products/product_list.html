@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!--列出所有物件-->
+    <!-- {{ object_list }} -->
+    <!--for loop 列出所有物件編號與標題-->
+    <h1>產品清單</h1>
+    <button type="submit"> <a href='create/'> 新增商品 </a></button>
+    <ol>
+        {% for instance in object_list %}
+            <li>  <a href='{{ instance.get_absolute_url }}'> {{ instance.title }} </a>- No.{{ instance.id }}</li>
+        {% endfor %} <!--for loop 結束-->
+    </ol>
+{% endblock %}
