@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <form action='.' method='POST'>{% csrf_token %}
+    <h1>您確定要「刪除」夥伴 "{{ object.company_name }}"嗎？</h1>
+    <p>
+        <input type='submit' value='Yes'/>
+        <button type="submit"> <a href='../'> Cancel </a></button>
+    </p>
+    </form>
+{% endblock %}
